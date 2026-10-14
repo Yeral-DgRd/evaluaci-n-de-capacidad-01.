@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | Yeral Delgado</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    
+    <link rel="stylesheet" href="css/proyectos.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <aside id="sidebar">
+        <h2><i class="fa-solid fa-user-graduate"></i> <span>Yeral Delgado</span></h2>
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-house"></i> <span>Inicio</span></a>
+            <a href="sobre.html"><i class="fa-solid fa-address-card"></i> <span>Sobre mí</span></a>
+            <a href="proyectos.html" class="active"><i class="fa-solid fa-laptop-code"></i> <span>Proyectos</span></a>
+            <a href="formulario.html"><i class="fa-solid fa-file-lines"></i> <span>Formulario</span></a>
+            <a href="blog.html"><i class="fa-solid fa-blog"></i> <span>Blog</span></a>
+            <a href="galeria.html"><i class="fa-solid fa-image"></i> <span>Galería</span></a>
+            <a href="contacto.html"><i class="fa-solid fa-envelope"></i> <span>Contacto</span></a>
+        </nav>
+    </aside>
+
+    <div class="content" id="mainContent">
+        <header class="scroll-animate">
+            <h1><i class="fa-solid fa-laptop-code"></i> Mis Proyectos</h1>
+            <p>Una muestra de mis trabajos, prácticas y desarrollos tecnológicos.</p>
+        </header>
+
+        <main class="scroll-animate">
+            <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Proyectos Realizados</h2>
+
+            <div class="projects-list">
+                
+                <div class="project-item">
+                    <div class="project-header">
+                        <i class="fa-solid fa-store"></i>
+                        <h3>Web para Negocios</h3>
+                    </div>
+                    <p>Desarrollo de páginas web corporativas para negocios, mostrando información detallada de sus productos, servicios y formularios de contacto optimizados.</p>
+                    <div class="tech-badges">
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS3</span>
+                        <span class="badge">Diseño Responsivo</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <i class="fa-solid fa-book"></i>
+                        <h3>Guía de Desarrollo Web</h3>
+                    </div>
+                    <p>Creación de una página web educativa con información detallada y tutoriales sobre la creación de sitios web, facilitando el aprendizaje de nuevos desarrolladores.</p>
+                    <div class="tech-badges">
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">UI/UX</span>
+                        <span class="badge">Documentación</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-header">
+                        <i class="fa-solid fa-database"></i>
+                        <h3>Sistema de Gestión</h3>
+                    </div>
+                    <p>Prototipo de aplicación web para la administración de bases de datos y registros, aplicando lógica de programación y estructuras de almacenamiento.</p>
+                    <div class="tech-badges">
+                        <span class="badge">SQL</span>
+                        <span class="badge">Backend</span>
+                        <span class="badge">Lógica</span>
+                    </div>
+                </div>
+
+                    <div class="table-container">
+                    <table class="custom-table">
+                        <caption>Resumen de Proyectos Destacados y Experiencia Académica</caption>
+                        <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Categoría</th>
+                            <th>Nombre del Proyecto</th>
+                            <th>Tecnologías Utilizadas</th>
+                            <th>Estado</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td rowspan="2">2025</td>
+                            <td>Desarrollo Web</td>
+                            <td>Rediseño Portal Académico ATI</td>
+                            <td>HTML5, CSS Grid, JavaScript</td>
+                            <td><span class="badge active">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>UI/UX Design</td>
+                            <td>Sistema de Inventario Móvil</td>
+                            <td>Figma, CSS Variables, Flexbox</td>
+                            <td><span class="badge active">Completado</span></td>
+                        </tr>
+                        <tr>
+                            <td>2026</td>
+                            <td>Backend / API</td>
+                            <td>Servidor REST de Evaluaciones</td>
+                            <td>Python, MySQL, JSON API</td>
+                            <td><span class="badge pending">En Proceso</span></td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="4">Total de Proyectos Documentados</td>
+                            <td>3 Proyectos</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Yeral Delgado- Derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
+        // Partículas
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < (canvas.width * canvas.height) / 12000; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1, speedX: (Math.random() - 0.5) * 0.8, speedY: (Math.random() - 0.5) * 0.8
+                });
+            }
+        }
+        window.addEventListener('resize', initCanvas);
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.speedX; p.y += p.speedY;
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                ctx.fillStyle = 'rgba(0, 210, 255, 0.4)';
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        initCanvas(); animateParticles();
+    </script>
+</body>
+</html>

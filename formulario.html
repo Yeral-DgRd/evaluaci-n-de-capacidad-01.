@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ficha Registral de Estudiantes - Yeral Delgado.">
+    <title>Formulario | Yeral Delgado</title>
+    
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    
+    <!-- CSS Exclusivo del Formulario -->
+    <link rel="stylesheet" href="css/formulario.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <aside id="sidebar">
+        <h2><i class="fa-solid fa-user-graduate"></i> <span>Yeral Delgado</span></h2>
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-house"></i> <span>Inicio</span></a>
+            <a href="sobre.html"><i class="fa-solid fa-address-card"></i> <span>Sobre mí</span></a>
+            <a href="proyectos.html"><i class="fa-solid fa-laptop-code"></i> <span>Proyectos</span></a>
+            <a href="formulario.html" class="active"><i class="fa-solid fa-file-lines"></i> <span>Formulario</span></a>
+            <a href="blog.html"><i class="fa-solid fa-blog"></i> <span>Blog</span></a>
+            <a href="galeria.html"><i class="fa-solid fa-image"></i> <span>Galería</span></a>
+            <a href="contacto.html"><i class="fa-solid fa-envelope"></i> <span>Contacto</span></a>
+        </nav>
+    </aside>
+
+    <div class="content" id="mainContent">
+        <header class="scroll-animate">
+            <h1><i class="fa-solid fa-clipboard-list"></i> FORMULARIO</h1>
+            <p>Ficha Registral de Estudiantes - Fundamentos de Desarrollo Web</p>
+        </header>
+
+        <main class="scroll-animate">
+            <form action="https://formspree.io/f/myeknblb" method="POST">
+                
+                <fieldset>
+                    <legend><i class="fa-solid fa-user"></i> 1. Datos Personales del Postulante</legend>
+                    
+                    <div class="form-group">
+                        <label for="nombres">Nombres Completos:</label>
+                        <input type="text" id="nombres" name="nombres" placeholder="Ej. Yeral Anthony" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos Completos:</label>
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Ej. Delgado Rodríguez" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dni">DNI / Documento:</label>
+                        <input type="text" id="dni" name="dni" placeholder="8 dígitos" maxlength="8" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha_nac">Fecha de Nacimiento:</label>
+                        <input type="date" id="fecha_nac" name="fecha_nac" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="yeraldelgador@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono / Celular:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="906956608" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fa-solid fa-graduation-cap"></i> 2. Información Académica</legend>
+
+                    <div class="form-group">
+                        <label for="programa">Programa de Estudio:</label>
+                        <select id="programa" name="programa" required>
+                            <option value="" disabled selected>-- Seleccione una Especialidad --</option>
+                            <option value="desarrollo_sistemas">Desarrollo de Sistemas de Información</option>
+                            <option value="diseno_web">Diseño y Desarrollo Web</option>
+                            <option value="redes">Redes y Conectividad</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="distrito">Distrito de Procedencia:</label>
+                        <input type="text" id="distrito" name="distrito" placeholder="Escriba su distrito de origen">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Turno de Preferencia:</label>
+                        <div class="options-group">
+                            <label class="option-item"><input type="radio" name="turno" value="Manana" required> Mañana</label>
+                            <label class="option-item"><input type="radio" name="turno" value="Noche"> Noche</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Áreas de Interés Técnico:</label>
+                        <div class="options-group">
+                            <label class="option-item"><input type="checkbox" name="interes" value="Frontend"> Desarrollo Frontend</label>
+                            <label class="option-item"><input type="checkbox" name="interes" value="Backend"> Programación Backend</label>
+                            <label class="option-item"><input type="checkbox" name="interes" value="Redes"> Redes y Servidores</label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><i class="fa-solid fa-comment-dots"></i> 3. Documentación y Mensaje</legend>
+
+                    <div class="form-group">
+                        <label for="observaciones">Observaciones o Comentarios Adicionales:</label>
+                        <textarea id="observaciones" name="observaciones" rows="4" placeholder="Ingrese alguna especificación o consulta para la secretaría"></textarea>
+                    </div>
+                </fieldset>
+
+                <div class="form-buttons">
+                    <button type="reset" class="btn btn-reset"><i class="fa-solid fa-rotate-left"></i> Restablecer Campos</button>
+                    <button type="submit" class="btn btn-submit"><i class="fa-solid fa-paper-plane"></i> Enviar Formulario</button>
+                </div>
+
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Yeral Delgado - Derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Scroll Reveal
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+                else { entry.target.classList.remove('visible'); }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.scroll-animate').forEach(el => { observer.observe(el); });
+
+        // Partículas
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            let numberOfParticles = (canvas.width * canvas.height) / 12000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speedX: (Math.random() - 0.5) * 0.8,
+                    speedY: (Math.random() - 0.5) * 0.8
+                });
+            }
+        }
+
+        window.addEventListener('resize', initCanvas);
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                let p = particles[i];
+                p.x += p.speedX;
+                p.y += p.speedY;
+
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+
+                ctx.fillStyle = 'rgba(0, 210, 255, 0.4)';
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+
+                for (let j = i; j < particles.length; j++) {
+                    let p2 = particles[j];
+                    let dx = p.x - p2.x;
+                    let dy = p.y - p2.y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 90) {
+                        ctx.strokeStyle = `rgba(0, 210, 255, ${1 - dist / 90})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initCanvas();
+        animateParticles();
+    </script>
+</body>
+</html>

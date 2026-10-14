@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mí | Yeral Delgado</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    
+    <link rel="stylesheet" href="css/sobre.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <aside id="sidebar">
+        <h2><i class="fa-solid fa-user-graduate"></i> <span>Yeral Delgado</span></h2>
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-house"></i> <span>Inicio</span></a>
+            <a href="sobre.html" class="active"><i class="fa-solid fa-address-card"></i> <span>Sobre mí</span></a>
+            <a href="proyectos.html"><i class="fa-solid fa-laptop-code"></i> <span>Proyectos</span></a>
+            <a href="formulario.html"><i class="fa-solid fa-file-lines"></i> <span>Formulario</span></a>
+            <a href="blog.html"><i class="fa-solid fa-blog"></i> <span>Blog</span></a>
+            <a href="galeria.html"><i class="fa-solid fa-image"></i> <span>Galería</span></a>
+            <a href="contacto.html"><i class="fa-solid fa-envelope"></i> <span>Contacto</span></a>
+        </nav>
+    </aside>
+    
+    <div class="content" id="mainContent">
+        <header class="scroll-animate">
+            <div class="header-text">
+                <h1><i class="fa-solid fa-user-gear"></i> Sobre mí</h1>
+                <p>Conoce mi trayectoria, habilidades y pasión por la tecnología</p>
+            </div>
+            <div class="status-badge">
+                <span class="status-dot"></span> Disponible para Proyectos
+            </div>
+        </header>
+        
+        <main class="scroll-animate">
+            <h2 class="section-title"><i class="fa-solid fa-user-pen"></i> Resumen Estudiantil</h2>
+            <div class="summary-card">
+                <div class="profile-avatar">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+                <div class="summary-text">
+                    Soy estudiante del <strong>Rep. Federal de Alemania</strong> enfocado en el aprendizaje de desarrollo de software y tecnología web. Me apasiona resolver problemas mediante la lógica de programación y la creación de interfaces modernas y funcionales. Constantemente busco mejorar mis habilidades técnicas en desarrollo web, bases de datos y redes.
+                </div>
+            </div>
+
+            <h2 class="section-title"><i class="fa-solid fa-bullseye"></i> Áreas de Interés y Especialidad</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon-box">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3>Programación</h3>
+                    <p>Desarrollo de algoritmos, lógica de programación y estructuras de código.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-box">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Maquetación e interfaces responsivas con HTML5, CSS3 y JavaScript.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-box">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3>Bases de Datos</h3>
+                    <p>Modelado, consultas SQL y administración de datos relacionales.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon-box">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3>Redes de Datos</h3>
+                    <p>Configuración de arquitecturas de red con Cisco Packet Tracer.</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Trayectoria Académica</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Etapa / Rol</th>
+                            <th>Institución</th>
+                            <th>Área / Especialidad</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa-solid fa-user-graduate" style="color: #00d2ff; margin-right: 8px;"></i> Estudiante</td>
+                            <td>Instituto de Educación Superior</td>
+                            <td>Desarrollo de Sistemas</td>
+                            <td><span class="badge-tag"><i class="fa-solid fa-spinner"></i> En Curso</span></td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-laptop-code" style="color: #00d2ff; margin-right: 8px;"></i> Estudiante</td>
+                            <td>Formación Académica</td>
+                            <td>Programación y Desarrollo Web</td>
+                            <td><span class="badge-tag"><i class="fa-solid fa-check"></i> Activo</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Yeral Delgado - Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Cursor Neón
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
+        // Partículas
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < (canvas.width * canvas.height) / 12000; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1, speedX: (Math.random() - 0.5) * 0.8, speedY: (Math.random() - 0.5) * 0.8
+                });
+            }
+        }
+        window.addEventListener('resize', initCanvas);
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.speedX; p.y += p.speedY;
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                ctx.fillStyle = 'rgba(0, 210, 255, 0.4)';
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        initCanvas(); animateParticles();
+    </script>
+</body>
+</html>

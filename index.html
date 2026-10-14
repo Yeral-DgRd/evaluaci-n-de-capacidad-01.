@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Yeral Delgado</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.ico">
+    
+    <link rel="stylesheet" href="css/index.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <aside id="sidebar">
+        <h2><i class="fa-solid fa-user-graduate"></i> <span>Yeral Delgado</span></h2>
+        <nav>
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> <span>Inicio</span></a>
+            <a href="sobre.html"><i class="fa-solid fa-address-card"></i> <span>Sobre mí</span></a>
+            <a href="proyectos.html"><i class="fa-solid fa-laptop-code"></i> <span>Proyectos</span></a>
+            <a href="formulario.html"><i class="fa-solid fa-file-lines"></i> <span>Formulario</span></a>
+            <a href="blog.html"><i class="fa-solid fa-blog"></i> <span>Blog</span></a>
+            <a href="galeria.html"><i class="fa-solid fa-image"></i> <span>Galería</span></a>
+            <a href="contacto.html"><i class="fa-solid fa-envelope"></i> <span>Contacto</span></a>
+        </nav>
+    </aside>
+    
+    <div class="content" id="mainContent">
+        <header class="scroll-animate">
+            <div class="cubo-3d-container">
+                <div class="cubo-3d">
+                    <div class="cara front"><i class="fa-brands fa-html5"></i></div>
+                    <div class="cara back"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="cara right"><i class="fa-brands fa-js"></i></div>
+                    <div class="cara left"><i class="fa-solid fa-code"></i></div>
+                    <div class="cara top"><i class="fa-solid fa-lightbulb"></i></div>
+                    <div class="cara bottom"><i class="fa-solid fa-graduation-cap"></i></div>
+                </div>
+            </div>
+            <div>
+                <h1 id="typewriter"></h1>
+                <p>Estudiante | Comprometido | Responsable</p>
+            </div>
+        </header>
+        
+        <main class="scroll-animate">
+            <h2><i class="fa-solid fa-handshake"></i> Bienvenido</h2>
+            <p>Hola, soy <strong>Yeral Delgado</strong>. Este espacio está diseñado para compartir mis logros académicos y proyectos.</p>
+            
+            <h3><i class="fa-solid fa-bullseye"></i> Propósito del Sitio</h3>
+            <ul>
+                <li>Compartir mis proyectos y trabajos realizados durante mis estudios.</li>
+                <li>Mostrar mis conocimientos y habilidades en programación y desarrollo web.</li>
+                <li>Aprender y mejorar mis conocimientos en tecnología y sistemas.</li>
+            </ul>
+            
+            <div class="media-container">
+                <div class="imagen-wrapper">
+                    <img src="https://picsum.photos/800/400" alt="Imagen tecnológica">
+                </div>
+                <div class="audio-wrapper">
+                    <p><i class="fa-solid fa-music"></i> Audio Demo</p>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div class="video-responsive">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/1jyC39vuJtw"
+                title="Exposición Académica: Rediseño y Arquitectura Web"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+            </div>
+
+            <figure class="short-video-container">
+            <video controls poster="img/poster-demo.jpg" preload="metadata" width="100%">
+                <source src="video/Pippit_0923_SubtlePortrait.mp4" type="video/mp4">
+                <source src="video/Pippit_0923_SubtlePortrait.webm" type="video/webm">
+                <track src="media/subtitulos-es.vtt" kind="subtitles" srclang="es" label="Español" default>
+                Tu navegador no soporta el reproductor de video HTML5.
+            </video>
+            <figcaption>Demostración en video corto de la interfaz responsiva del sitio.</figcaption>
+            </figure>
+
+            <section class="carousel-container highlight-card">
+                <div class="carousel-slide" id="carouselSlide">
+                        <img src="img/activity_coding.png" alt="Foto 1">
+                        <img src="img/activity_presenting.png" alt="Foto 2">
+                        <img src="img/portrait_pose_1.png" alt="Foto 3">
+                        <img src="img/portrait_pose_2.png" alt="Foto 4">
+                        <img src="img/portrait_pose_3.png" alt="Foto 5">
+                </div>
+                    <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+                    <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Yeral Delgado - Derechos reservados.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Cursor seguidor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Máquina de escribir
+        const textToType = "¡BIENVENIDO A MI PORTAFOLIO!";
+        const typewriterElement = document.getElementById('typewriter');
+        let index = 0;
+        function typeEffect() {
+            if (index < textToType.length) {
+                typewriterElement.innerHTML += textToType.charAt(index);
+                index++;
+                setTimeout(typeEffect, 60);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', typeEffect);
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+
+        // Partículas
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            for (let i = 0; i < (canvas.width * canvas.height) / 12000; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1, speedX: (Math.random() - 0.5) * 0.8, speedY: (Math.random() - 0.5) * 0.8
+                });
+            }
+        }
+        window.addEventListener('resize', initCanvas);
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, i) => {
+                p.x += p.speedX; p.y += p.speedY;
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                ctx.fillStyle = 'rgba(0, 210, 255, 0.4)';
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        initCanvas(); animateParticles();
+
+      
+        const slide = document.getElementById('carouselSlide');
+        const images = slide.querySelectorAll('img');
+        const prev = document.getElementById('prevBtn');
+        const next = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('carouselDots');
+
+        let counter = 0;
+        let timer;
+
+        images.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.dot');
+
+        function updateSlide() {
+            slide.style.transform = `translateX(${-counter * 100}%)`;
+            dots.forEach(d => d.classList.remove('active'));
+            dots[counter].classList.add('active');
+        }
+
+        function nextSlide() { counter = (counter + 1) % images.length; updateSlide(); }
+        function prevSlide() { counter = (counter - 1 + images.length) % images.length; updateSlide(); }
+        function goToSlide(index) { counter = index; updateSlide(); }
+
+        next.addEventListener('click', nextSlide);
+        prev.addEventListener('click', prevSlide);
+
+        function startTimer() { timer = setInterval(nextSlide, 5000); }
+        function stopTimer() { clearInterval(timer); }
+
+        document.querySelector('.carousel-container').addEventListener('mouseenter', stopTimer);
+        document.querySelector('.carousel-container').addEventListener('mouseleave', startTimer);
+
+        startTimer();
+
+    </script>
+</body>
+</html>>
