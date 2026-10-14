@@ -1,0 +1,360 @@
+/* ==========================================
+   PALETA CYBER / SPACE TECH - BLOG
+   ========================================== */
+:root {
+    --bg-dark: #0b1120;
+    --cyan-neon: #00d2ff;
+    --blue-glow: #0072ff;
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --card-bg: rgba(15, 23, 42, 0.75);
+    --card-border: rgba(0, 210, 255, 0.25);
+    --border-radius: 20px;
+}
+
+/* RESET GENERAL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* BODY CON FONDO DE CIRCUITOS Y RADIAL GLOW */
+body {
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 50% 50%, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.98) 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%230EA5E9' stroke-width='0.8' stroke-opacity='0.18'%3E%3Cpath d='M10 10 h30 v20 h20 v30 h20' /%3E%3Cpath d='M90 90 h-20 v-30 h-30 v-10' /%3E%3Cpath d='M0 50 h25 v-25 h25' /%3E%3Cpath d='M100 50 h-20 v20 h-20' /%3E%3Ccircle cx='40' cy='30' r='2.5' fill='%230EA5E9' fill-opacity='0.25' /%3E%3Ccircle cx='60' cy='60' r='2.5' fill='%230EA5E9' fill-opacity='0.25' /%3E%3Ccircle cx='25' cy='25' r='2.5' fill='%230EA5E9' fill-opacity='0.25' /%3E%3Ccircle cx='60' cy='70' r='2.5' fill='%230EA5E9' fill-opacity='0.25' /%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: cover, 120px 120px;
+    background-attachment: fixed;
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    cursor: default;
+}
+
+/* PARTICULAS Y CURSOR NEÓN */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.custom-cursor {
+    width: 12px;
+    height: 12px;
+    background: var(--cyan-neon);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 15px var(--cyan-neon), 0 0 30px var(--cyan-neon);
+    transform: translate(-50%, -50%);
+}
+
+/* SIDEBAR DESPLEGABLE */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 75px;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(20px);
+    color: #ffffff;
+    padding: 2rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.7);
+    transition: width 0.4s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid var(--card-border);
+}
+
+#sidebar:hover {
+    width: 260px;
+    padding: 2rem 1.2rem;
+}
+
+#sidebar h2 {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#sidebar h2 i {
+    color: var(--cyan-neon);
+    font-size: 1.6rem;
+    min-width: 35px;
+    text-align: center;
+}
+
+#sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#sidebar nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.9rem 0.8rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.3s ease;
+}
+
+#sidebar nav a i {
+    font-size: 1.25rem;
+    min-width: 35px;
+    text-align: center;
+}
+
+#sidebar nav a:hover {
+    background: rgba(0, 210, 255, 0.12);
+    color: #ffffff;
+}
+
+#sidebar nav a.active {
+    background: rgba(0, 210, 255, 0.25);
+    color: var(--cyan-neon);
+    border: 1px solid var(--cyan-neon);
+}
+
+/* ESTRUCTURA CONTENEDOR */
+.content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 2.5rem 100px;
+}
+
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ENCABEZADO HEADER */
+header.scroll-animate {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+header h1 i {
+    color: var(--cyan-neon);
+    filter: drop-shadow(0 0 10px var(--cyan-neon));
+}
+
+header p {
+    color: var(--text-muted);
+}
+
+/* CONTENEDOR PRINCIPAL MAIN */
+main.scroll-animate {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.section-title {
+    font-size: 1.35rem;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.15);
+    padding-bottom: 0.6rem;
+}
+
+.section-title i {
+    color: var(--cyan-neon);
+    filter: drop-shadow(0 0 8px var(--cyan-neon));
+}
+
+/* MAQUETACIÓN DEL BLOG (PERFIL + GRID DE DATOS) */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* TARJETA DE FOTO DE PERFIL VERTICAL */
+.profile-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 210, 255, 0.25);
+    background: rgba(11, 17, 32, 0.9);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+}
+
+.profile-card img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.profile-card:hover {
+    border-color: var(--cyan-neon);
+    box-shadow: 0 12px 30px rgba(0, 210, 255, 0.35);
+}
+
+.profile-card:hover img {
+    transform: scale(1.04);
+}
+
+/* CUADRÍCULA DE DATOS PERSONALES */
+.info-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
+
+.info-card {
+    background: rgba(11, 17, 32, 0.85);
+    border: 1px solid rgba(0, 210, 255, 0.25);
+    border-radius: 16px;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--cyan-neon);
+    box-shadow: 0 8px 20px rgba(0, 210, 255, 0.25);
+}
+
+.info-card-header {
+    color: var(--cyan-neon);
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-card-header i {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 6px var(--cyan-neon));
+}
+
+.info-card-body {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ANCHO COMPLETO PARA INSTITUTO */
+.info-card.full-width {
+    grid-column: 1 / -1;
+}
+
+footer {
+    margin-top: 2.5rem;
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* RESPONSIVO */
+@media (max-width: 850px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+    .profile-card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    body { flex-direction: column; }
+    .custom-cursor { display: none; }
+    #sidebar { position: relative; width: 100% !important; height: auto; }
+    #sidebar nav { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .content { padding: 1.5rem 1rem; }
+}
+/* Animaciones y Botones */
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title { animation: fadeInUp 1s ease-out forwards; }
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.4); }
+  70% { box-shadow: 0 0 0 14px rgba(14, 165, 233, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0); }
+}
+
+.highlight-card { animation: pulseGlow 2.5s infinite; }
